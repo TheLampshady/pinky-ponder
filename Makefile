@@ -18,4 +18,4 @@ zip:
 	zip -X -r ../build/lambda.zip *
 
 deploy:
-	aws lambda update-function-code --function-name ${FUNCTION} --zip-file fileb://build/lambda.zip
+	aws lambda update-function-code --function-name ${FUNCTION} --zip-file fileb://build/lambda.zip --profile ${PROFILE}
