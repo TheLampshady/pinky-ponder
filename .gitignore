@@ -92,14 +92,6 @@ ENV/
 # OSX
 .DS_Store
 
-# Gemfile
-Gemfile.lock
-# RVM
-.ruby-gemset
-.ruby-version
-
-# Default db.sqlite3 database for wagtail
-db.sqlite3
 
 # Pycharm settings
 .idea/
@@ -117,3 +109,6 @@ node_modules
 .sass-cache
 static/dist
 *stats.json
+
+# Build
+lambda.zip
