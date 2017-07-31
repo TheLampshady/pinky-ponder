@@ -27,7 +27,7 @@ welcome_messages = [
     "I think so Brain, but I don't think Kaye Ballard's in the union.",
     "I think so Brain, but, the Rockettes? I mean, it's mostly girls, isn't it?",
     "I think so Brain, but pants with horizontal stripes make me look chubby.",
-    "Well, I think so -POIT- but where do you stick the feather and call it macaroni?",
+    "Well, I think so Brain but where do you stick the feather and call it macaroni?",
     "Well, I think so Brain, but pantyhose are so uncomfortable in the summertime.",
     "Well, I think so Brain, but it's a miracle that this one grew back.",
     "Well, I think so Brain, but first you'd have to take that whole bridge apart, wouldn't you?",
@@ -151,4 +151,9 @@ class PinkySkill(AllVoice):
     def Pondering(self):
         return self.build_response(
             speech=random.choice(welcome_messages),
+        )
+
+    def HelpIntent(self):
+        return self.build_response(
+            speech="There is only one thing to ask. Are you pondering what i am pondering?"
         )
