@@ -141,6 +141,13 @@ welcome_messages = [
     "I think so Brain! But what's the use of having a heart-shaped tattoo if it's going to be covered by hair?",
 ]
 
+pinky_words = [
+    "Narf",
+    "Point",
+    "Troz",
+    "Zort"
+]
+
 
 class PinkySkill(AllVoice):
     """
@@ -153,7 +160,26 @@ class PinkySkill(AllVoice):
             speech=random.choice(welcome_messages),
         )
 
+    def LaunchRequest(self):
+        return self.build_response(
+            speech=random.choice(welcome_messages),
+            reprompt=random.choice(pinky_words)
+        )
+
     def HelpIntent(self):
         return self.build_response(
-            speech="There is only one thing to ask. Are you pondering what i am pondering?"
+            speech="There is only one thing to ask. Are you pondering what i am pondering?",
+            reprompt="I think so Human, but if you don't ask what i'm pondering, how will we know what to do next?"
+        )
+
+    def CancelIntent(self):
+        return self.build_response(
+            text='Canceled',
+            speech="Canceled"
+        )
+
+    def StopIntent(self):
+        return self.build_response(
+            text='Stopped',
+            speech="Stopped"
         )
